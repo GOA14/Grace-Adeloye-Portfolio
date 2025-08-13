@@ -1,157 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Grace Adeloye - Data Analyst</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <meta name="description" content="Grace Adeloye - Data Analyst specializing in running analysis on large datasets.">
-  <meta name="keywords" content="data analyst, analytics, Python, Power BI, DAX, data visualization">
-  <meta name="author" content="Grace Adeloye">
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <meta name="description" content="Grace Adeloye - Data Analyst specializing in data analytics, bioinformatics, and dashboard automation." />
+  <meta name="keywords" content="data analyst, bioinformatics, Python, Power BI, DAX, Bash, data visualization, Excel" />
+  <meta name="author" content="Grace Adeloye" />
 
   <style>
     body {
       font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-      background-color: #f5f5f5; /* Light gray background */
-      color: #333; /* Dark text color */
+      background-color: #f5f8fa;
+      color: #333;
     }
 
     header {
-      background-color: #001f3f; /* Green header background */
-      color: #fff;
-      text-align: center;
-      padding: 80px 0; /* Adjusted padding */
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #fff;
+      /* Optional: add a subtle shadow */
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    header img {
+      width: 100%;
+      max-width: 900px;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      border-radius: 0 0 12px 12px;
     }
 
-    h1, p {
-      margin: 0;
-    }
-
-    section {
-      max-width: 800px;
-      margin: 20px auto; /* Adjusted margin */
+    .container {
+      max-width: 1200px;
+      margin: auto;
       padding: 20px;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     }
 
-    h2 {
-      color: #001f3f;
-      border-bottom: 2px solid 001f3f;
-      padding-bottom: 0.5em;
-      margin-bottom: 20px; /* Adjusted margin */
-    }
-
-    .profile-image {
-      max-width: 120px;
-      height: auto;
-      border-radius: 50%;
-      margin-right: 20px;
-    }
-
-    .about-me {
+    /* About Me */
+    #about {
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    #about img {
+      max-width: 220px;
+      border-radius: 10px;
+    }
+    #about div {
+      flex: 1;
+      min-width: 250px;
     }
 
+    /* Projects */
+    #projects {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
     .project {
-      margin-bottom: 30px; /* Adjusted margin */
+      background: #fefefe;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    .project h3 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #0052cc;
+      margin-top: 0;
     }
 
-    .project img,
-    .project video {
+    .project img, .project video {
       max-width: 100%;
-      height: auto;
       border-radius: 8px;
-      margin-bottom: 15px; /* Adjusted margin */
+      margin-top: 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .project img:hover, .project video:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
 
-    footer {
-      background-color: #001f3f;
-      color: #fff;
-      text-align: center;
-      padding: 20px 0; /* Adjusted padding */
+    /* Contact */
+    #contact {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      margin-top: 40px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
-
-    /* List Styles */
-    ul {
-      list-style-type: none;
+    #contact ul {
+      list-style: none;
       padding: 0;
     }
-
-    ul li {
+    #contact li {
       margin-bottom: 10px;
     }
 
-    a {
-      color: #001f3f;
+    /* Footer */
+    footer {
+      background-color: #001f3f;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.85rem;
+      margin-top: 40px;
+    }
+    footer a {
+      color: #fff;
     }
 
-    a:hover {
-      text-decoration: underline;
+    /* Responsive tweaks */
+    @media(max-width: 900px) {
+      header img {
+        height: 140px;
+      }
+      #projects {
+        grid-template-columns: 1fr;
+      }
     }
-
+    @media(max-width: 768px) {
+      #about {
+        flex-direction: column;
+        text-align: center;
+      }
+      #about img {
+        margin-bottom: 15px;
+      }
+      #projects {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
 
+  <!-- Header with just an image -->
   <header>
-    <h1>Grace Adeloye</h1>
-    <p>Data Analyst</p>
+    <img src="1.jpg" alt="Header Image">
   </header>
 
-  <section>
-    <div class="about-me">
-      <img src="ME.jpg" alt="Grace Adeloye" class="profile-image">
+  <div class="container">
+
+    <!-- About Me -->
+    <section id="about">
+      <img src="ME.jpg" alt="Grace Adeloye">
       <div>
         <h2>About Me</h2>
-        <p>Hi, I'm Grace Adeloye, a passionate Data Analyst. I specialize in running analysis on large datasets to bring useful insights. My expertise lies in using data analytics tools such as Power BI for visualization, DAX measure, and Python for data cleaning and manipulation. I'm committed to contributing my expertise to drive tangible and positive outcomes for your business as I deliver results with precision and a strategic mindset.</p>
+        <p>Hi, My name is Grace Adeloye from Osun State, Nigeria. I am a Data Analyst and Bioinformatics enthusiast who loves turning messy data into clear, actionable insights. I work with Python, Power BI, Excel, and Bash to automate tasks, build dashboards, and explore data in meaningful ways. I am currently pursuing a Masters in Bioinformatics, and I enjoy combining my technical skills with curiosity to solve real-world problems. When I am not analyzing data, I am probably learning something new or exploring ways to make data more useful for people.</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section>
+    <!-- Projects -->
     <h2>My Projects</h2>
-    <div class="project">
-      <h3>Sales Analysis Dashboard</h3>
-      <p><strong>Aim:</strong> To analyze sales data (provided by MeriSKILL) in order to identify the following:</p>
+    <section id="projects">
+
+      <div class="project">
+        <h3><img src="6.png" alt="" style="width:40px;"> Sales Analysis Dashboard</h3>
+        <p>Analyze sales trends, top-selling products, and revenue metrics.</p>
+        <a href="https://lnkd.in/dx3NmsVy" target="_blank">
+          <img src="final sales.PNG" alt="Sales Dashboard Screenshot">
+        </a>
+        <img src="2..svg" alt="Dashboard">
+      </div>
+
+      <div class="project">
+        <h3><img src="5.png" alt="" style="width: 40px;"> Python Data Processing</h3>
+        <p>Utilized Python (Pandas, Numpy, Matplotlib) for advanced data cleaning and manipulation.</p>
+        <a href="Python_data_processing.html">
+          <img src="Screenshot (30).png" alt="Python Script Output">
+        </a>
+        <img src="Screenshot (28).png" alt="Jupyter_Notebook">
+      </div>
+
+      <div class="project">
+        <h3><img src="7.png" alt="" style="width:20px;"> Bash/Linux Data Operations & Bioinformatics</h3>
+        <p>Applied Bash scripting and designed pipelines for nucleotide sequence analysis.</p>
+        <a href="Bash_Linux_Data_Operations_Bioinformatics.html">
+          <img src="bash.png" alt="Bash Script & DNA Analysis">
+        </a>
+        <img src="3.png" alt="Bioinformatics Graphic">
+      </div>
+
+      <div class="project">
+        <h3><img src="4.png" alt="" style="width:20px;"> Excel Automation</h3>
+        <p>Created automated Excel workflows for data cleaning, transformation, and visualization.</p>
+        <a href="excel_automation.html">
+          <img src="EXCEL.png" alt="Excel Automation Screenshot">
+        </a>
+        <img src="ex" alt="Additional Excel Preview">
+      </div>
+
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact Me</h2>
       <ul>
-        <li>Sales trend 📈</li>
-        <li>Top selling product by sales count and quantity ordered</li>
-        <li>Revenue metrics such as total sales and profit margin 💲</li>
-        <li>Create visualizations to present findings effectively 🖼</li>
+        <li>Email: <a href="mailto:graceadeloye2017@yahoo.com">graceadeloye2017@yahoo.com</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/graceadeloye" target="_blank">www.linkedin.com/in/graceadeloye</a></li>
+        <li>Phone Number: <a href="h+2348160842617" target="_blank">www.whatsapp.com</a></li>
       </ul>
-      <p>To interact with my sales dashboard, <a href="https://lnkd.in/dx3NmsVy" target="_blank">click here</a>.</p>
-      <img src="final sales.PNG" alt="Sales Analysis Dashboard">
-    </div>
+    </section>
 
-    <div class="project">
-      <h3>Diabetes Prediction System</h3>
-      <p><strong>Primary objective:</strong> Explore diabetic patient data intricacies to discern trends and patterns that could contribute to enhancing healthcare outcomes.</p>
-      <p><strong>Tools used:</strong> Python Jupyter Notebook, PyCharm Django, Pandas, Numpy, Seaborn, Matplotlib, and Scikit-learn.</p>
-      <img src="Screenshot (28).png" alt="Additional Image 1">
-      <img src="Screenshot (30).png" alt="Additional Image 2">
-      <video width="100%" height="auto" controls>
-        <source src="Diabetes.mp4_V1.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-  </section>
-
-  <section class="contact-me">
-    <h2>Contact Me</h2>
-    <ul>
-      <li>Email: <a href="mailto:graceadeloye2017@yahoo.com">graceadeloye2017@yahoo.com</a></li>
-      <li>LinkedIn: <a href="https://www.linkedin.com/in/graceadeloye" target="_blank">www.linkedin.com/in/graceadeloye</a></li>
-    </ul>
-  </section>
+  </div>
 
   <footer>
-    <p>&copy; 2023 Grace Adeloye. All rights reserved.</p>
+    <p>&copy; 2025 Grace Adeloye. All rights reserved.</p>
+    <p>Icons made by <a href="https://www.flaticon.com/" target="_blank">Flaticon</a> authors</p>
   </footer>
 
 </body>
